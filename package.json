@@ -6,9 +6,6 @@
   "repository": "https://github.com/swingerman/grid-bootstrap5.git",
   "author": "Miklos Szanyi <miklos.szanyi@gmil.com>",
   "license": "MIT",
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
   "scripts": {
     "start": "npm run watch",
     "css": "npm-run-all css-compile-main css-compress",

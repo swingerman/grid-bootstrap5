@@ -1,0 +1,63 @@
+$utilities: (
+
+// spacing - column
+  "grid-column-gap": (
+    property: column-gap,
+    class: grid-cg,
+    responsive: true,
+    values: $spacers
+  ),
+
+  // spacing - row
+  "grid-row-gap": (
+    property: row-gap,
+    class: grid-rg,
+    responsive: true,
+    values: $spacers
+  ),
+
+  // justify
+  "grid-justify-self": (
+    property: justify-self,
+    class: just-self,
+    responsive: true,
+    values: (
+      start: start,
+      end: end,
+      center: center,
+      stretch: stretch,
+    )
+  )
+ );
+
+
+
+
+// // Generate breakpoint based variants
+// @each $breakpoint in map-keys($grid-breakpoints) {
+//     @include media-breakpoint-up($breakpoint) {
+//         $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+//         // grid spacing
+//         @each $prop,
+//         $abbrev in $spacingMap {
+//             @each $size,
+//             $length in $spacers {
+//                 .grid-#{$abbrev}-#{$size} {
+//                     #{$prop}: $length !important;
+//                 }
+//                 .grid-#{$abbrev}#{$infix}-#{$size} {
+//                     #{$prop}: $length !important;
+//                 }
+//             }
+//         }
+//         // justify
+//         @each $val in $justify {
+//             .justify-self-#{$breakpoint}-#{$val} {
+//                 justify-self: $val !important;
+//             }
+//             .justify-self-#{$infix}-#{$val} {
+//                 justify-self: $val !important;
+//             }
+//         }
+//     }
+// }

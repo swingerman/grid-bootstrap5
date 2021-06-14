@@ -1,6 +1,14 @@
-# grid-bootstrap
+![npm](https://img.shields.io/npm/v/grid-bootstrap5) ![npm](https://img.shields.io/npm/dw/grid-bootstrap5) ![NPM](https://img.shields.io/npm/l/grid-bootstrap5)
+
+# grid-bootstrap5
+
 Responsive grid classes for Bootstrap 5. Extends Bootstrap 5 with display: grid utilities.
 Uses Bootstrap 5 variables and mixins. It will pick up Bootstrap's or your override varaibles such as $grid-breakpoints. To generate responsive grid utilities.
+
+## Looking for Bootstrap 4 support?
+
+We've got you covered.
+Use __[grid-bootstrap](https://www.npmjs.com/package/grid-bootstrap)__
 
 ## Install
 
@@ -25,8 +33,10 @@ Link our distributed script in your html's head:
 ## How to use
 
 ### For compiling
+
 Include the entry point grid-bootstrap-import.scss into your scss file.
 Replace {relative/path} with the path of your setup
+
 ```scss
 @import '{relative/path}/node_modules/bootstrap/scss/functions';
 @import '{relative/path}/node_modules/bootstrap/scss/variables';
@@ -38,6 +48,7 @@ Replace {relative/path} with the path of your setup
 ```
 
 Or, if you already imported bootstrap sources just import grid bootstrap files
+
 ```scss
 @import '{relative/path}/node_modules/bootstrap/scss/grid/grid';
 @import '{relative/path}/node_modules/grid-bootstrap5/scss/grid-bootstrap-import';

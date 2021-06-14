@@ -1,7 +1,7 @@
 {
   "name": "grid-bootstrap5",
-  "version": "0.0.2",
-  "description": "Display: grid hlper classes for Bootstrap5",
+  "version": "0.0.3",
+  "description": "Display: grid extension classes for Bootstrap5",
   "main": "dist/css/grid-bootstrap-next.css",
   "repository": "https://github.com/swingerman/grid-bootstrap5.git",
   "author": "Miklos Szanyi <miklos.szanyi@gmil.com>",
@@ -13,7 +13,8 @@
     "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 --include-path=node_modules scss/grid-bootstrap-next.scss dist/css/grid-bootstrap-next.css --importer node_modules/node-sass-import",
     "css-compress": "uglifycss dist/css/grid-bootstrap-next.css --output dist/css/grid-bootstrap-next.min.css",
     "watch": "nodemon --watch scss/ --ext scss --exec \"npm run css\"",
-    "prepare": "yarn run css"
+    "prepare": "yarn run css",
+    "audit:fix": "npx yarn-audit-fix"
   },
   "files": [
     "dist",
@@ -24,7 +25,8 @@
     "scss",
     "responsive",
     "grid",
-    "bootstrap"
+    "bootstrap",
+    "nootstrap5"
   ],
   "bugs": {
     "url": "https://github.com/swingerman/grid-bootstrap5/issues"

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Bootstrap5 - Responsive Tests</title>
+    <link href="../../dist/css/grid-bootstrap-next.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 20px;
+            background: #f8f9fa;
+        }
+        
+        .test-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .grid-item {
+            background: #dc3545;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+            margin: 2px;
+            font-weight: bold;
+        }
+        
+        .breakpoint-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 1000;
+        }
+        
+        .breakpoint-indicator::before {
+            content: "XS (< 576px)";
+        }
+        
+        @media (min-width: 576px) {
+            .breakpoint-indicator::before {
+                content: "SM (≥ 576px)";
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .breakpoint-indicator::before {
+                content: "MD (≥ 768px)";
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .breakpoint-indicator::before {
+                content: "LG (≥ 992px)";
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .breakpoint-indicator::before {
+                content: "XL (≥ 1200px)";
+            }
+        }
+        
+        @media (min-width: 1400px) {
+            .breakpoint-indicator::before {
+                content: "XXL (≥ 1400px)";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="breakpoint-indicator"></div>
+    
+    <h1>Responsive Grid Tests</h1>
+    <p><strong>Instructions:</strong> Resize your browser window to test responsive behavior at different breakpoints.</p>
+
+    <!-- Responsive Display Grid -->
+    <div class="test-section">
+        <h2>Responsive Display Grid</h2>
+        <p><code>.d-none .d-md-grid .grid-cols-3</code></p>
+        <div class="d-none d-md-grid grid-cols-3 grid-cg-2">
+            <div class="grid-item">Hidden on XS/SM</div>
+            <div class="grid-item">Visible MD+</div>
+            <div class="grid-item">Grid Layout</div>
+        </div>
+    </div>
+
+    <!-- Responsive Column Count -->
+    <div class="test-section">
+        <h2>Responsive Column Count</h2>
+        <p><code>.d-grid .grid-cols-1 .grid-cols-sm-2 .grid-cols-md-3 .grid-cols-lg-4 .grid-cols-xl-6</code></p>
+        <div class="d-grid grid-cols-1 grid-cols-sm-2 grid-cols-md-3 grid-cols-lg-4 grid-cols-xl-6 grid-cg-2">
+            <div class="grid-item">Item 1</div>
+            <div class="grid-item">Item 2</div>
+            <div class="grid-item">Item 3</div>
+            <div class="grid-item">Item 4</div>
+            <div class="grid-item">Item 5</div>
+            <div class="grid-item">Item 6</div>
+            <div class="grid-item">Item 7</div>
+            <div class="grid-item">Item 8</div>
+            <div class="grid-item">Item 9</div>
+            <div class="grid-item">Item 10</div>
+            <div class="grid-item">Item 11</div>
+            <div class="grid-item">Item 12</div>
+        </div>
+    </div>
+
+    <!-- Responsive Column Spans -->
+    <div class="test-section">
+        <h2>Responsive Column Spans</h2>
+        <p><code>.d-grid .grid-cols-6</code> with responsive spans</p>
+        <div class="d-grid grid-cols-6 grid-cg-2">
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Full → Half → Third</div>
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Full → Half → Third</div>
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Full → Half → Third</div>
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Full → Half → Third</div>
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Full → Half → Third</div>
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Full → Half → Third</div>
+        </div>
+    </div>
+
+    <!-- Responsive Grid Gaps -->
+    <div class="test-section">
+        <h2>Responsive Grid Gaps</h2>
+        <p><code>.d-grid .grid-cols-3 .grid-cg-1 .grid-cg-md-3 .grid-rg-1 .grid-rg-md-3</code></p>
+        <div class="d-grid grid-cols-3 grid-cg-1 grid-cg-md-3 grid-rg-1 grid-rg-md-3">
+            <div class="grid-item">Small gaps on mobile</div>
+            <div class="grid-item">Large gaps on tablet+</div>
+            <div class="grid-item">Responsive gaps</div>
+            <div class="grid-item">Small gaps on mobile</div>
+            <div class="grid-item">Large gaps on tablet+</div>
+            <div class="grid-item">Responsive gaps</div>
+        </div>
+    </div>
+
+    <!-- Responsive Justify Self -->
+    <div class="test-section">
+        <h2>Responsive Justify Self</h2>
+        <p><code>.d-grid .grid-cols-2</code> with responsive justify-self</p>
+        <div class="d-grid grid-cols-2 grid-cg-3">
+            <div class="grid-item just-self-center just-self-md-start">Center → Start</div>
+            <div class="grid-item just-self-center just-self-md-end">Center → End</div>
+        </div>
+    </div>
+
+    <!-- Complex Responsive Layout -->
+    <div class="test-section">
+        <h2>Complex Responsive Layout</h2>
+        <p>Mobile: Single column | Tablet: 2-column | Desktop: Sidebar layout</p>
+        <div class="d-grid grid-cols-1 grid-cols-md-2 grid-cols-lg-4 grid-cg-2 grid-rg-2">
+            <div class="grid-item grid-cs-1 grid-cs-md-2 grid-cs-lg-4">Header (Full width)</div>
+            <div class="grid-item grid-cs-1 grid-cs-md-1 grid-cs-lg-1 grid-rs-1 grid-rs-lg-2">Nav/Sidebar</div>
+            <div class="grid-item grid-cs-1 grid-cs-md-1 grid-cs-lg-3">Main Content</div>
+            <div class="grid-item grid-cs-1 grid-cs-md-1 grid-cs-lg-2">Article 1</div>
+            <div class="grid-item grid-cs-1 grid-cs-md-1 grid-cs-lg-2">Article 2</div>
+            <div class="grid-item grid-cs-1 grid-cs-md-2 grid-cs-lg-4">Footer (Full width)</div>
+        </div>
+    </div>
+
+</body>
+</html>

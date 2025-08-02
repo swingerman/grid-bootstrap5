@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Bootstrap5 - UI Test Suite</title>
+    <link href="../../dist/css/grid-bootstrap-next.min.css" rel="stylesheet">
+    <style>
+        /* Test page styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: #f8f9fa;
+        }
+        
+        .test-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .test-title {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .grid-item {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+            margin: 2px;
+        }
+        
+        .grid-container {
+            margin: 10px 0;
+            border: 1px dashed #dee2e6;
+            padding: 10px;
+        }
+        
+        .test-label {
+            background: #e9ecef;
+            padding: 5px 10px;
+            margin: 10px 0 5px 0;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .responsive-test {
+            border: 2px solid #28a745;
+        }
+        
+        .breakpoint-info {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grid Bootstrap5 - Comprehensive UI Test Suite</h1>
+    <p>This page tests all CSS Grid features provided by the grid-bootstrap5 library.</p>
+
+    <!-- Test 1: Basic Display Grid -->
+    <div class="test-section">
+        <h2 class="test-title">1. Basic Display Grid Classes</h2>
+        
+        <div class="test-label">.d-grid with 3 columns</div>
+        <div class="grid-container d-grid grid-cols-3">
+            <div class="grid-item">Item 1</div>
+            <div class="grid-item">Item 2</div>
+            <div class="grid-item">Item 3</div>
+            <div class="grid-item">Item 4</div>
+            <div class="grid-item">Item 5</div>
+            <div class="grid-item">Item 6</div>
+        </div>
+    </div>
+
+    <!-- Test 2: Grid Template Columns -->
+    <div class="test-section">
+        <h2 class="test-title">2. Grid Template Columns (.grid-cols-*)</h2>
+        
+        <div class="test-label">.grid-cols-1</div>
+        <div class="grid-container d-grid grid-cols-1">
+            <div class="grid-item">Col 1</div>
+            <div class="grid-item">Col 1</div>
+        </div>
+        
+        <div class="test-label">.grid-cols-2</div>
+        <div class="grid-container d-grid grid-cols-2">
+            <div class="grid-item">Col 1</div>
+            <div class="grid-item">Col 2</div>
+            <div class="grid-item">Col 1</div>
+            <div class="grid-item">Col 2</div>
+        </div>
+        
+        <div class="test-label">.grid-cols-4</div>
+        <div class="grid-container d-grid grid-cols-4">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+        </div>
+    </div>
+
+    <!-- Test 3: Grid Column Start/End -->
+    <div class="test-section">
+        <h2 class="test-title">3. Grid Column Start/End</h2>
+        
+        <div class="test-label">Grid column positioning with .grid-col-start-* and .grid-col-end-*</div>
+        <div class="grid-container d-grid grid-cols-4">
+            <div class="grid-item grid-col-start-1 grid-col-end-3">Start 1, End 3</div>
+            <div class="grid-item grid-col-start-3 grid-col-end-5">Start 3, End 5</div>
+            <div class="grid-item grid-col-start-2 grid-col-end-4">Start 2, End 4</div>
+        </div>
+    </div>
+
+    <!-- Test 4: Grid Column Span -->
+    <div class="test-section">
+        <h2 class="test-title">4. Grid Column Span (.grid-cs-*)</h2>
+        
+        <div class="test-label">Column spans in 6-column grid</div>
+        <div class="grid-container d-grid grid-cols-6">
+            <div class="grid-item grid-cs-1">Span 1</div>
+            <div class="grid-item grid-cs-2">Span 2</div>
+            <div class="grid-item grid-cs-3">Span 3</div>
+            <div class="grid-item grid-cs-6">Span 6 (Full Width)</div>
+            <div class="grid-item grid-cs-4">Span 4</div>
+            <div class="grid-item grid-cs-2">Span 2</div>
+        </div>
+    </div>
+
+    <!-- Test 5: Grid Row Span -->
+    <div class="test-section">
+        <h2 class="test-title">5. Grid Row Span (.grid-rs-*)</h2>
+        
+        <div class="test-label">Row spans in 3-column grid</div>
+        <div class="grid-container d-grid grid-cols-3">
+            <div class="grid-item grid-rs-2">Row Span 2</div>
+            <div class="grid-item">Item 2</div>
+            <div class="grid-item grid-rs-3">Row Span 3</div>
+            <div class="grid-item">Item 4</div>
+            <div class="grid-item">Item 5</div>
+            <div class="grid-item">Item 6</div>
+            <div class="grid-item">Item 7</div>
+        </div>
+    </div>
+
+    <!-- Test 6: Grid Gap Utilities -->
+    <div class="test-section">
+        <h2 class="test-title">6. Grid Gap Utilities</h2>
+        
+        <div class="test-label">.grid-cg-0 (Column Gap 0)</div>
+        <div class="grid-container d-grid grid-cols-3 grid-cg-0">
+            <div class="grid-item">No Gap</div>
+            <div class="grid-item">No Gap</div>
+            <div class="grid-item">No Gap</div>
+        </div>
+        
+        <div class="test-label">.grid-cg-3 (Column Gap 3)</div>
+        <div class="grid-container d-grid grid-cols-3 grid-cg-3">
+            <div class="grid-item">Gap 3</div>
+            <div class="grid-item">Gap 3</div>
+            <div class="grid-item">Gap 3</div>
+        </div>
+        
+        <div class="test-label">.grid-rg-3 (Row Gap 3)</div>
+        <div class="grid-container d-grid grid-cols-2 grid-rg-3">
+            <div class="grid-item">Row Gap 3</div>
+            <div class="grid-item">Row Gap 3</div>
+            <div class="grid-item">Row Gap 3</div>
+            <div class="grid-item">Row Gap 3</div>
+        </div>
+        
+        <div class="test-label">.grid-cg-2 .grid-rg-2 (Both gaps)</div>
+        <div class="grid-container d-grid grid-cols-3 grid-cg-2 grid-rg-2">
+            <div class="grid-item">Both</div>
+            <div class="grid-item">Gaps</div>
+            <div class="grid-item">Applied</div>
+            <div class="grid-item">Both</div>
+            <div class="grid-item">Gaps</div>
+            <div class="grid-item">Applied</div>
+        </div>
+    </div>
+
+    <!-- Test 7: Justify Self Utilities -->
+    <div class="test-section">
+        <h2 class="test-title">7. Justify Self Utilities (.just-self-*)</h2>
+        
+        <div class="test-label">Justify self variations</div>
+        <div class="grid-container d-grid grid-cols-2 grid-cg-3">
+            <div class="grid-item just-self-start">Start</div>
+            <div class="grid-item just-self-end">End</div>
+            <div class="grid-item just-self-center">Center</div>
+            <div class="grid-item just-self-stretch">Stretch</div>
+        </div>
+    </div>
+
+    <!-- Test 8: Responsive Grid Classes -->
+    <div class="test-section">
+        <h2 class="test-title">8. Responsive Grid Classes</h2>
+        <div class="breakpoint-info">
+            <strong>Responsive Test:</strong> Resize your browser window to see responsive grid behavior.
+            <br>Mobile: 1 column | Tablet (md): 2 columns | Desktop (lg): 4 columns
+        </div>
+        
+        <div class="test-label">Responsive columns: .grid-cols-1 .grid-cols-md-2 .grid-cols-lg-4</div>
+        <div class="grid-container responsive-test d-grid grid-cols-1 grid-cols-md-2 grid-cols-lg-4 grid-cg-2">
+            <div class="grid-item">Responsive</div>
+            <div class="grid-item">Grid</div>
+            <div class="grid-item">Columns</div>
+            <div class="grid-item">Test</div>
+            <div class="grid-item">Item 5</div>
+            <div class="grid-item">Item 6</div>
+            <div class="grid-item">Item 7</div>
+            <div class="grid-item">Item 8</div>
+        </div>
+        
+        <div class="test-label">Responsive display: .d-none .d-md-grid</div>
+        <div class="grid-container responsive-test d-none d-md-grid grid-cols-3">
+            <div class="grid-item">Hidden on mobile</div>
+            <div class="grid-item">Visible on tablet+</div>
+            <div class="grid-item">d-md-grid</div>
+        </div>
+        
+        <div class="test-label">Responsive column spans: .grid-cs-6 .grid-cs-md-3 .grid-cs-lg-2</div>
+        <div class="grid-container responsive-test d-grid grid-cols-6 grid-cg-2">
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Responsive Span</div>
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Responsive Span</div>
+            <div class="grid-item grid-cs-6 grid-cs-md-3 grid-cs-lg-2">Responsive Span</div>
+        </div>
+    </div>
+
+    <!-- Test 9: Complex Grid Layout -->
+    <div class="test-section">
+        <h2 class="test-title">9. Complex Grid Layout Example</h2>
+        
+        <div class="test-label">Complex layout combining multiple features</div>
+        <div class="grid-container d-grid grid-cols-6 grid-cg-2 grid-rg-2">
+            <div class="grid-item grid-cs-6 just-self-center">Header (Full Width, Centered)</div>
+            <div class="grid-item grid-cs-2 grid-rs-3">Sidebar (2 cols, 3 rows)</div>
+            <div class="grid-item grid-cs-4">Main Content Area</div>
+            <div class="grid-item grid-cs-2">Sub Item 1</div>
+            <div class="grid-item grid-cs-2">Sub Item 2</div>
+            <div class="grid-item grid-cs-4">Footer Content</div>
+            <div class="grid-item grid-cs-6 just-self-center">Footer (Full Width, Centered)</div>
+        </div>
+    </div>
+
+    <!-- Test 10: All Grid Sizes -->
+    <div class="test-section">
+        <h2 class="test-title">10. All Grid Column Sizes (1-12)</h2>
+        
+        <div class="test-label">Testing all .grid-cols-* classes (1 through 12)</div>
+        
+        <div class="test-label">.grid-cols-5</div>
+        <div class="grid-container d-grid grid-cols-5 grid-cg-1">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+        </div>
+        
+        <div class="test-label">.grid-cols-8</div>
+        <div class="grid-container d-grid grid-cols-8 grid-cg-1">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+        </div>
+        
+        <div class="test-label">.grid-cols-12 (Maximum columns)</div>
+        <div class="grid-container d-grid grid-cols-12 grid-cg-1">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+            <div class="grid-item">10</div>
+            <div class="grid-item">11</div>
+            <div class="grid-item">12</div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 40px; padding: 20px; text-align: center; background: #343a40; color: white; border-radius: 8px;">
+        <h3>Grid Bootstrap5 UI Test Suite Complete</h3>
+        <p>All major CSS Grid features have been tested above. This page serves as a comprehensive visual test for the grid-bootstrap5 library.</p>
+        <p><strong>Features Tested:</strong> Display Grid, Grid Columns, Column Start/End, Column Span, Row Span, Grid Gaps, Justify Self, Responsive Variants, Complex Layouts</p>
+    </footer>
+</body>
+</html>

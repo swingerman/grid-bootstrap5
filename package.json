@@ -14,7 +14,13 @@
     "css-compress": "uglifycss dist/css/grid-bootstrap-next.css --output dist/css/grid-bootstrap-next.min.css",
     "watch": "nodemon --watch scss/ --ext scss --exec \"npm run css\"",
     "prepare": "yarn run css",
-    "audit:fix": "npx yarn-audit-fix"
+    "audit:fix": "npx yarn-audit-fix",
+    "test": "./run-ui-tests.sh",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "test:install": "npx playwright install",
+    "test:quick": "npx playwright test --project=chromium",
+    "serve": "npx http-server -p 3000 -c-1"
   },
   "files": [
     "dist",

@@ -1,1 +1,9 @@
 node_modules
+.cache
+
+# Playwright test results
+test-results/
+playwright-report/
+
+# But keep UI test screenshots for documentation
+!tests/ui/screenshots/

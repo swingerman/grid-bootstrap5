@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Bootstrap5 - UI Test Suite</title>
+    <link href="../dist/css/grid-bootstrap-next.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 800px;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .test-card {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #007bff;
+        }
+        
+        .test-link {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .test-link:hover {
+            background: #0056b3;
+            color: white;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .status-good { background: #d4edda; color: #155724; }
+        .status-info { background: #cce8e8; color: #0c5460; }
+        
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 Grid Bootstrap5 UI Test Suite</h1>
+        <p>Comprehensive visual testing for all CSS Grid features</p>
+        <div class="d-grid grid-cols-3 grid-cg-2" style="margin-top: 20px;">
+            <div class="feature-item status-good">✅ Display Grid</div>
+            <div class="feature-item status-good">✅ Grid Columns</div>
+            <div class="feature-item status-good">✅ Column Span</div>
+            <div class="feature-item status-good">✅ Row Span</div>
+            <div class="feature-item status-good">✅ Grid Gaps</div>
+            <div class="feature-item status-good">✅ Justify Self</div>
+            <div class="feature-item status-info">📱 Responsive</div>
+            <div class="feature-item status-info">🎨 Complex Layouts</div>
+            <div class="feature-item status-info">🔧 All Breakpoints</div>
+        </div>
+    </div>
+
+    <div class="test-card">
+        <h2>📋 Comprehensive Feature Test</h2>
+        <p>
+            <strong>Purpose:</strong> Tests all CSS Grid features in a single comprehensive page.<br>
+            <strong>Features:</strong> Display grid, grid columns (1-12), column start/end positioning, 
+            column spans, row spans, grid gaps, justify-self utilities, and complex layout examples.
+        </p>
+        <p>
+            <strong>Best for:</strong> Overall functionality verification, visual regression testing, 
+            feature documentation.
+        </p>
+        <a href="tests/ui/pages/comprehensive-test.html" class="test-link">View Comprehensive Test</a>
+    </div>
+
+    <div class="test-card">
+        <h2>📱 Responsive Behavior Test</h2>
+        <p>
+            <strong>Purpose:</strong> Tests responsive grid behavior across all Bootstrap breakpoints.<br>
+            <strong>Features:</strong> Responsive display grid, responsive column counts, responsive 
+            column spans, responsive grid gaps, responsive justify-self, and complex responsive layouts.
+        </p>
+        <p>
+            <strong>Best for:</strong> Testing mobile-first responsive design, breakpoint verification, 
+            cross-device compatibility.
+        </p>
+        <a href="tests/ui/pages/responsive-test.html" class="test-link">View Responsive Test</a>
+    </div>
+
+    <div class="test-card">
+        <h2>🔧 Features Tested</h2>
+        <div class="feature-grid">
+            <div class="feature-item"><code>.d-grid</code></div>
+            <div class="feature-item"><code>.grid-cols-{1-12}</code></div>
+            <div class="feature-item"><code>.grid-col-start-*</code></div>
+            <div class="feature-item"><code>.grid-col-end-*</code></div>
+            <div class="feature-item"><code>.grid-cs-{1-12}</code></div>
+            <div class="feature-item"><code>.grid-rs-{1-12}</code></div>
+            <div class="feature-item"><code>.grid-cg-{0-5}</code></div>
+            <div class="feature-item"><code>.grid-rg-{0-5}</code></div>
+            <div class="feature-item"><code>.just-self-*</code></div>
+            <div class="feature-item"><code>.d-{bp}-grid</code></div>
+            <div class="feature-item"><code>.grid-cols-{bp}-*</code></div>
+            <div class="feature-item"><code>.grid-cs-{bp}-*</code></div>
+            <div class="feature-item">And many more...</div>
+        </div>
+    </div>
+
+    <div class="test-card">
+        <h2>🚀 How to Use These Tests</h2>
+        <ol>
+            <li><strong>Manual Testing:</strong> Open each test page in your browser and verify visual appearance</li>
+            <li><strong>Responsive Testing:</strong> Resize browser window or use dev tools to test different screen sizes</li>
+            <li><strong>Automated Testing:</strong> Use Playwright to run automated screenshot tests</li>
+            <li><strong>Cross-Browser Testing:</strong> Test in Chrome, Firefox, Safari, and Edge</li>
+            <li><strong>Regression Testing:</strong> Compare screenshots before and after changes</li>
+        </ol>
+    </div>
+
+    <div class="test-card">
+        <h2>⚡ Running Automated Tests</h2>
+        <p>To run the Playwright tests:</p>
+        <pre style="background: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto;">
+# Install dependencies (if not already installed)
+npm run test:install
+
+# Run all tests
+npm test
+
+# Run tests with browser UI
+npm run test:ui
+
+# Run tests in headed mode (see browser)
+npm run test:headed
+
+# Start local server for testing
+npm run serve
+        </pre>
+    </div>
+
+    <footer style="margin-top: 40px; padding: 20px; text-align: center; background: #343a40; color: white; border-radius: 8px;">
+        <p><strong>Grid Bootstrap5 UI Test Suite</strong> - Ensuring quality CSS Grid implementation</p>
+        <p>Tests cover all mixins, utilities, and responsive features</p>
+    </footer>
+</body>
+</html>

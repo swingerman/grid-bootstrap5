@@ -1,0 +1,55 @@
+version: 2
+updates:
+  # Enable version updates for npm (yarn) dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    # Group all minor and patch updates together
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    # Allow both direct and indirect (transitive) dependencies
+    allow:
+      - dependency-type: "all"
+    # Add labels to pull requests
+    labels:
+      - "dependencies"
+      - "automated"
+    # Add reviewers (optional - uncomment and add your GitHub username)
+    # reviewers:
+    #   - "username"
+    # Add commit message prefix
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    # Group all GitHub Actions updates together
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    # Add labels to pull requests
+    labels:
+      - "github-actions"
+      - "dependencies"
+      - "automated"
+    # Add commit message prefix
+    commit-message:
+      prefix: "ci"
+      include: "scope"

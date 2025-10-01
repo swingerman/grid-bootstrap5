@@ -1,6 +1,6 @@
 {
   "name": "grid-bootstrap5",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Display: grid extension classes for Bootstrap5",
   "main": "dist/css/grid-bootstrap-next.css",
   "repository": "https://github.com/swingerman/grid-bootstrap5.git",

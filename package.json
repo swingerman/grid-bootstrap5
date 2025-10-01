@@ -10,8 +10,8 @@
     "start": "npm run watch",
     "css": "npm-run-all css-compile-main css-compress",
     "css-lint": "stylelint \"scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
-    "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 --include-path=node_modules scss/grid-bootstrap-next.scss dist/css/grid-bootstrap-next.css --importer node_modules/node-sass-import",
-    "css-compress": "uglifycss dist/css/grid-bootstrap-next.css --output dist/css/grid-bootstrap-next.min.css",
+    "css-compile-main": "sass --style=expanded --source-map --embed-sources --load-path=node_modules scss/grid-bootstrap-next.scss dist/css/grid-bootstrap-next.css",
+    "css-compress": "cleancss --source-map --source-map-inline-sources --output dist/css/grid-bootstrap-next.min.css dist/css/grid-bootstrap-next.css",
     "watch": "nodemon --watch scss/ --ext scss --exec \"npm run css\"",
     "prepare": "yarn run css",
     "audit:fix": "npx yarn-audit-fix"
@@ -34,17 +34,15 @@
   "homepage": "https://github.com/swingerman/grid-bootstrap5#readme",
   "unpkg": "dist/css/grid-bootstrap-next.min.css",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta3"
+    "bootstrap": "^5.3.3"
   },
   "devDependencies": {
-    "css-lint": "^1.0.1",
-    "node-sass": "^5.0.0",
-    "node-sass-import": "^2.0.1",
-    "nodemon": "^2.0.7",
+    "clean-css-cli": "^5.6.3",
+    "nodemon": "^3.1.10",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^8.3.1",
-    "stylelint": "^13.13.0",
-    "stylelint-config-standard": "^22.0.0",
-    "uglifycss": "^0.0.29"
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.93.2",
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard-scss": "^13.1.0"
   }
 }

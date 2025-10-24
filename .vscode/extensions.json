@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "stylelint.vscode-stylelint",
+    "sibiraj-s.vscode-scss-formatter",
+    "mrmlnc.vscode-scss",
+    "ritwickdey.LiveServer"
+  ]
+}
